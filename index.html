@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Thoughts</title>
+
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&family=Raleway:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div><img class="header__logo" src="./images/logo.png" alt="Deep Thoughts Logo"></div>
+        <h1 class="header__greeting">Welcome to Deep Thoughts</h1>
+    </header>
+
+    <form action="" class="form">
+        <fieldset class="form__field">
+            <label for="journalDate">Date of entry</label>
+            <input type="date" name="journalDate" id="journalDate">
+        </fieldset>
+        <fieldset class="form__field">
+            <label for="journalConcepts">Concepts covered</label>
+            <input type="text" name="journalConcepts" id="journalConcepts">
+        </fieldset>
+        <fieldset class="form__field">
+            <label for="journalText">Journal Entry</label>
+            <input type="textarea" name="journalEntry" id="journalEntry">
+        </fieldset>
+        <fieldset class="form__field">
+            <label for="journalMood">Mood</label>
+            <select name="journalMood" id="journalMood">
+                <option value="happy">Happy</option>
+                <option value="fine">Fine</option>
+                <option value="sad">Sad</option>
+                <option value="inspired">Inspired</option>
+            </select>
+        </fieldset class="form__field">
+        <button class="button--record">Record Journal Entry</button>
+    </form>
+
+    <section class="journal">
+        <article class="journal__entry">
+            <h2 class="journal__header">
+                journal 1: mood, date
+            </h2>
+            <p class="journal__body">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
+            </p>
+        </article>
+        <article class="journal__entry">
+            <h2 class="journal__header">
+                journal 2: mood, date
+            </h2>
+            <p class="journal__body">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
+            </p>
+        </article>
+
+    </section>
+
+    <footer>&copy; e-bierschenk github link: github.com
+
+    </footer>
+
+
+</body>
+
+</html>
