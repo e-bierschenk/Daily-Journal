@@ -45,8 +45,6 @@ body {
 
 .header {
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
     background-color: #8acb88;
     color: #111;
     width: 100%;
