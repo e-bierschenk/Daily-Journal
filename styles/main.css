@@ -9,7 +9,10 @@ body {
 
 /* typography */
 
-p {
+p,
+.form,
+.footer,
+.button {
     font-family: 'Raleway', sans-serif;
 }
 
@@ -29,7 +32,10 @@ h2 {
     line-height: .9em;
 }
 
-/* layout */
+/* -----------
+      layout 
+    ----------
+*/
 
 body {
     display: flex;
@@ -39,14 +45,15 @@ body {
 
 .header {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-end;
     background-color: #8acb88;
     color: #111;
+    width: 100%;
 }
 
 .header__logo {
-    width: 100%;
+    max-width: 150px;
 }
 
 .form {
@@ -56,7 +63,7 @@ body {
 }
 
 .form button {
-    align-self: flex-start;
+    align-self: flex-end;
 }
 
 .journal {
@@ -66,6 +73,21 @@ body {
     margin-top: 1em;
     max-width: 60ch;
 }
+
+/* -----------------
+       form 
+   -----------------
+*/
+.form {
+    border: 1px solid #222;
+    border-radius: 5px;
+    padding: .25em;
+}
+
+.form__field{
+    border: none;
+}
+
 
 /* -----------------
        elements 
@@ -83,4 +105,10 @@ body {
     background-color: #ddd;
     margin: 0 auto;
     padding: 1rem;
+}
+
+.footer {
+    align-self: flex-start;
+    padding: .5rem;
+    margin-top: 2em;
 }
