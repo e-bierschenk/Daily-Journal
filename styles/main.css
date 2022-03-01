@@ -2,6 +2,8 @@
 
 body {
     font-size: 24px;
+    line-height: 1.5em;
+    font-family: 'Raleway', sans-serif;
     padding: 0;
     margin: 0;
     background: linear-gradient(0.25turn, #cbfbc5, #eee);
@@ -9,27 +11,34 @@ body {
 
 /* typography */
 
-p,
-.form,
-.footer,
+input,
+option,
+select {
+    font-family: monospace;
+}
+
 .button {
     font-family: 'Raleway', sans-serif;
+    font-weight: bold;
 }
 
 h1, 
 h2, 
 h3 {
     font-family: 'Montserrat Alternates', sans-serif;
+    line-height: .9em;
 }
 
 h1 {
     font-size: 4rem;
-    line-height: .9em;
 }
 
 h2 {
     font-size: 3rem;
-    line-height: .9em;
+}
+
+h3 {
+    font-size: 2rem;
 }
 
 /* -----------
@@ -54,20 +63,7 @@ body {
     max-width: 150px;
 }
 
-.form {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1em;
-}
-
-.form button {
-    align-self: flex-end;
-}
-
 .journal {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
     margin-top: 1em;
     max-width: 60ch;
 }
@@ -76,14 +72,63 @@ body {
        form 
    -----------------
 */
+
 .form {
-    border: 1px solid #222;
-    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 1em;
+    background-color: #fcf9f9;
+    border-radius: .5em;
     padding: .25em;
 }
 
-.form__field{
+.form__field {
     border: none;
+    padding: 0;
+    margin: .5em;
+    display: flex;
+    flex-direction: column;
+    font-size: .5em; 
+}
+
+select {
+    padding: 1px 2px
+}
+
+.form-top-row {
+    display: flex;
+}
+
+.button {
+    padding: .5em;
+    margin: .25em;
+    background-color: #8acb88;
+    color: #fcf9f9;
+    border: none;
+    border-radius: .5em;
+    font-size: .75em;
+    
+    justify-self: flex-start;
+    align-self: flex-end;
+}
+
+#journalDate {
+    width: 25ch;
+}
+
+#journalMood {
+    min-width: 12ch;    
+    height: 24px;
+}
+
+#journalConcepts {
+    max-width: 64ch;
+}
+
+#journalText {
+    max-width: 64ch;
+    min-height: 6em;
 }
 
 
@@ -92,17 +137,38 @@ body {
    -----------------
 */
 
+.journal__header h2,
+.journal__header h3 {
+    padding: 0;
+    margin: 0;
+}
+
+.journal__header h3 {
+    margin-top: 1em;
+}
+
 .journal__header {
     background-color: #648381;
     color: #eee;
+    border-radius: .5rem;
+
     padding: 1rem;
-    margin: 0;
+}
+
+
+.journal__header:hover {
+    background-color: #84aca9;  
 }
 
 .journal__body {
     background-color: #ddd;
-    margin: 0 auto;
+    margin: 0 .45rem;
     padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.journal__body--closed {
+    display: none;
 }
 
 .footer {
