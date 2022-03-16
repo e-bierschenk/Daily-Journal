@@ -1,10 +1,12 @@
-import { entryListComponent } from "./journalEntryList.js"
+import { renderJournal } from "./journalEntryList.js"
 import { buildAccordion } from "./accordion.js"
+import { getAPIData } from "./data/dataHandlers.js"
 
-//build list of journal entries
-entryListComponent()
+//get API data, then buildoutlist of entries
+const startJournal = () => {
+    getAPIData()
+    .then((journalData) => renderJournal(journalData))
+    .then(() => buildAccordion())
+}
 
-
-
-//turn on accordion functionality
-buildAccordion()
+startJournal()
