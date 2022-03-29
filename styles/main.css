@@ -57,10 +57,16 @@ body {
     background-color: #8acb88;
     color: #111;
     width: 100%;
+    justify-content: space-between;
 }
 
 .header__logo {
     max-width: 150px;
+}
+
+.header__filter {
+    align-self: flex-end;
+    margin-bottom: .5em;
 }
 
 .journal {
@@ -103,14 +109,22 @@ select {
 .button {
     padding: .5em;
     margin: .25em;
-    background-color: #8acb88;
-    color: #fcf9f9;
     border: none;
     border-radius: .5em;
     font-size: .75em;
     
     justify-self: flex-start;
     align-self: flex-end;
+}
+
+.button--green {
+    background-color: #8acb88;
+    color: #fcf9f9;
+}
+
+#buttonDiv {
+    display:flex;
+    justify-content: flex-end;
 }
 
 #journalDate {
@@ -163,12 +177,23 @@ select {
 .journal__body {
     background-color: #ddd;
     margin: 0 .45rem;
-    padding: 1rem;
+    padding: .5rem;
     margin-bottom: 1rem;
+    display:flex;
+    flex-direction: column;
 }
 
 .journal__body--closed {
     display: none;
+}
+
+.journal__text {
+    padding: 0;
+    margin: 0;
+}
+
+.button--edit {
+    align-self: flex-end;
 }
 
 .footer {
