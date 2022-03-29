@@ -19,42 +19,15 @@
     <header class="header">
         <div><img class="header__logo" src="./images/logo.png" alt="Deep Thoughts Logo"></div>
         <h1 class="header__text">Deep Thoughts</h1>
+        <input type="text" id="mood-filter" class="header__filter" placeholder="Filter entries by Mood..." size="24"></input>
     </header>
 
     <form action="" class="form" id="journalForm">
-        <div class="form-top-row">
-            <fieldset class="form__field">
-                <label for="journalDate">Date of entry</label>
-                <input type="date" name="journalDate" id="journalDate">
-            </fieldset>
-            <fieldset class="form__field">
-                <label for="journalMood">Mood</label>
-                <select name="journalMood" id="journalMood">
-                    <option value="happy">Happy</option>
-                    <option value="fine">Fine</option>
-                    <option value="sad">Sad</option>
-                    <option value="inspired">Inspired</option>
-                    <option value="murder">Murderous</option>
-                </select>
-            </fieldset>
-        </div>
-        <fieldset class="form__field">
-            <label for="journalConcepts">Concepts covered</label>
-            <input type="text" name="journalConcepts" id="journalConcepts">
-        </fieldset>
-        <fieldset class="form__field">
-            <label for="journalText">Journal Entry</label>
-            <textarea form="journalForm" name="journalText" id="journalText" rows="6" cols="64"></textarea>
-        </fieldset>
-        <button class="button button--record">Record Journal Entry</button>
+        <!-- entry form goes here -->
     </form>
 
     <section class="journal" id="entryLog">
-        <article class="journal__entry">
-
-            <!-- Journal Articles go here -->
-            
-        </article>
+        <!-- Journal Articles go here -->
     </section>
 
     <footer class="footer"> &copy; e-bierschenk github link: github.com
