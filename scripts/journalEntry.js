@@ -1,9 +1,11 @@
+import { getLoggedInUser } from "./data/dataHandlers.js"
+
 /*
  *  Purpose: To render a single journal entry as an
  *           HTML representation of the data
  */
 export const journalEntryComponent = (entry) => {
-    return `
+    let htmlString = `
         <article class="journal__entry" id="entry--${entry.id}">
         <div class="journal__header">
             <h2>Concepts: ${entry.concept}</h2>
@@ -11,13 +13,20 @@ export const journalEntryComponent = (entry) => {
         </div>
         <div class="journal__body">
             <p class="journal__text">${entry.entry}</p>
-            <div class="button--edit">
-                <button class="button button--edit" id="edit--${entry.id}">Edit</button>
-                <button class="button button--delete" id="delete--${entry.id}">Delete</button>
-            </div>
-
-        </div>
     `
+    if (getLoggedInUser().id === entry.userId) {
+        htmlString += `<div class="button--edit">
+            <button class="button button--edit" id="edit--${entry.id}">Edit</button>
+            <button class="button button--delete" id="delete--${entry.id}">Delete</button>
+        </div>
+    
+        </div>
+    `   
+    } else {
+        htmlString += "</div>"
+    }
+            
+    return htmlString
 }
 
 export const journalForm = (postObj = null) => {

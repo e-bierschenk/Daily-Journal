@@ -66,7 +66,12 @@ body {
 
 .header__filter {
     align-self: flex-end;
+    justify-self: end;
     margin-bottom: .5em;
+}
+
+.header__button {
+    justify-self: flex-end;
 }
 
 .journal {
@@ -112,14 +117,29 @@ select {
     border: none;
     border-radius: .5em;
     font-size: .75em;
+    cursor: pointer;
+    transition: all .5s;
     
     justify-self: flex-start;
     align-self: flex-end;
 }
 
+.button:hover {
+    background-color: #cbfbc5;
+    text-decoration: underline;
+}
+
 .button--green {
     background-color: #8acb88;
     color: #fcf9f9;
+}
+
+.button--green:hover {
+    color:#111;
+}
+
+.button--register {
+    align-self: center;
 }
 
 #buttonDiv {

@@ -52,3 +52,45 @@ export const updatePost = (postObj) => {
     })
     .then(response => response.json())
 }
+
+/*----------------------
+        AUTH
+-----------------------*/
+let loggedInUser = {}
+
+export const getLoggedInUser = () => loggedInUser
+
+export const logoutUser = () => {
+    loggedInUser = {}
+    sessionStorage.clear()
+}
+
+export const setLoggedInUser = userObj => {
+    loggedInUser = userObj
+    sessionStorage.setItem("user", JSON.stringify(loggedInUser))
+}
+
+export const loginUser = userObj => {
+    return fetch(`http://localhost:8088/users?name=${userObj.name}&email=${userObj.email}`)
+        .then(response => response.json())
+        .then(parsedUser => {
+            if (parsedUser.length > 0) {
+                setLoggedInUser(parsedUser[0])
+                return getLoggedInUser()
+            } else {
+                createUser(userObj)
+                    .then(response => setLoggedInUser(response))
+            }
+        })
+}
+
+const createUser = userObj => {
+    return fetch(`http://localhost:8088/users`, {
+        method: "POST",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify(userObj)
+    })
+    .then(response => response.json())
+}

@@ -4,7 +4,6 @@
  *    there are items in the collection exposed by the
  *    data module component
  */
-import { useJournals } from "./data/dataHandlers.js"
 import { journalEntryComponent, journalForm } from "./journalEntry.js"
 
 

@@ -1,11 +1,12 @@
 import { renderForm, renderJournal } from "./journalEntryList.js"
 import { buildAccordion } from "./accordion.js"
-import { getAPIData, useJournals, createPost, deletePost, getSinglePost, updatePost } from "./data/dataHandlers.js"
+import { getAPIData, useJournals, createPost, deletePost, getSinglePost, updatePost, getLoggedInUser, setLoggedInUser, loginUser, logoutUser } from "./data/dataHandlers.js"
+import { renderLoginForm } from "./auth/loginForm.js"
 
 //get API data, then buildoutlist of entries
 const startJournal = () => {
     getAPIData()
-        .then((journalData) => renderJournal(journalData))
+        .then(journalData => renderJournal(journalData))
         .then(() => {
             buildAccordion()
             renderForm()
@@ -13,7 +14,16 @@ const startJournal = () => {
 
 }
 
-startJournal()
+const checkLoggedIn = () => {
+    if (sessionStorage.user) {
+        setLoggedInUser(JSON.parse(sessionStorage.getItem("user")))
+        startJournal()
+    } else {
+        renderLoginForm()
+    }
+}
+checkLoggedIn()
+
 
 /*----------------------------
        EVENT LISTENERS
@@ -34,7 +44,8 @@ formEl.addEventListener("click", event => {
             date: Date.now(),
             mood: mood,
             concept: concept,
-            entry: entry
+            entry: entry,
+            userId: getLoggedInUser().id
         }
 
         createPost(postObj)
@@ -60,7 +71,8 @@ formEl.addEventListener("click", event => {
             date: date,
             mood: mood,
             concept: concept,
-            entry: entry
+            entry: entry,
+            userId: getLoggedInUser().id
         }
         
         updatePost(postObj)
@@ -108,5 +120,28 @@ filterEl.addEventListener("keypress", (event) => {
     if (event.keyCode === 13) {
         const filteredArray = useJournals().filter(journal => journal.mood === filterEl.value)
         renderJournal(filteredArray)
+    }
+})
+
+//event listener for login/register button
+document.addEventListener("click", event => {
+    if (event.target.id === "registerBtn"){
+        //build user object
+        const user = {
+            name: document.querySelector("input[name='loginName']").value,
+            email: document.querySelector("input[name='loginEmail']").value
+        }
+        //set logged in user
+        loginUser(user)
+            .then(startJournal)
+    }
+})
+
+//event listener for logout button
+document.addEventListener("click", event => {
+    if (event.target.id === "logout") {
+        logoutUser()
+        document.querySelector("#entryLog").innerHTML = ''
+        checkLoggedIn()
     }
 })

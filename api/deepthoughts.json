@@ -5,21 +5,46 @@
       "date": "07/24/2025",
       "mood": "fine",
       "concept": "HTML & CSS",
-      "entry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS."
+      "entry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
+      "userId": 1
     },
     {
       "id": 2,
       "date": "07/26/2025",
       "concept": "Complex Flexbox",
       "entry": "I tried to have an element in my Flexbox layout also be another Flexbox layout. It hurt my brain. I hate Steve.",
-      "mood": "Sad"
+      "mood": "Sad",
+      "userId": 1
     },
     {
       "id": 3,
       "date": "07/22/2025",
       "mood": "inspired",
       "concept": "github",
-      "entry": "we learned the oneway street workflow for github.  people seem very afraid of merge conflicts, but they don't seem so bad"
+      "entry": "we learned the oneway street workflow for github.  merge conficlicts",
+      "userId": 2
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "eric",
+      "email": "eric@nss.com"
+    },
+    {
+      "name": "bob",
+      "email": "bob@b.com",
+      "id": 2
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 3
+    },
+    {
+      "name": "new",
+      "email": "newtype@gd.com",
+      "id": 4
     }
   ]
 }
